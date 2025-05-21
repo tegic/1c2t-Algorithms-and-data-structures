@@ -1,5 +1,5 @@
 from array_with_unique_values import create_array_with_unique_values
-from list_classes import List, ListElement
+from list_classes import List
 
 min_value = 0
 max_value = 100
