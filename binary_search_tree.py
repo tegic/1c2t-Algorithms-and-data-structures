@@ -122,6 +122,14 @@ class BinarySearchTree():
                 previous_el.more.value = min_el.value
                 previous_min_el.less = min_el.more
         return True
+    
+    def find_height(self):
+        return self.find_height_recursive(self.first_el)
+    
+    def find_height_recursive(self, el):
+        if el == None:
+            return -1
+        return 1 + max(self.find_height_recursive(el.less), self.find_height_recursive(el.more))
 
 if __name__ == '__main__':
     # For tests

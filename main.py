@@ -1,26 +1,24 @@
-from array_with_unique_values import create_array_with_unique_values
 from list_classes import List
 from binary_search_tree import BinarySearchTree, TreeElement
 from time import time_ns
-
-min_value = 0
-max_value = 100
-count_of_values = 6
-array = create_array_with_unique_values(count_of_values, min_value, max_value)
+from config import arrays
 
 my_list = List()
 my_BST = BinarySearchTree()
 
-for i in range(len(array)):
-    my_list.add_sorted(array[i])
-    my_BST.add(TreeElement(array[i]))
+for i in range(len(arrays[0])):
+    my_BST.add(TreeElement(arrays[0][i]))
+    # for i in range(len(array)):
+    #     my_list.add_sorted(array[i])
+    #     my_BST.add(TreeElement(array[i]))
 
-my_BST.print()
+print(f"HEIGHT {my_BST.find_height()} for {len(arrays[0])} elements")
+# my_BST.print()
 
-for i in range(len(array) - 1, 0, -1):
-    print(f"deleting {array[i]}")
-    my_BST.delete(array[i])
-    my_BST.print()
+# for i in range(len(array) - 1, 0, -1):
+#     print(f"deleting {array[i]}")
+#     my_BST.delete(array[i])
+#     my_BST.print()
 
 # cl = 0
 # ct = 0
