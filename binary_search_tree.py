@@ -40,33 +40,30 @@ class BinarySearchTree():
             current_el.less = new_el
 
     def print(self):
-        current_el = first_el
+        current_el = self.first_el
         a = []
         b = []
         a.append(current_el)
+        print(current_el.value)
         while True:
             for i in range(len(a)):
                 if a[i] == None:
-                    b
+                    b.append(None)
+                    b.append(None)
                     continue
-                b.append(a[i].less, a[i].more)
+                b.append(a[i].less)
+                b.append(a[i].more)
             a = []
             continue_while = False
             for i in range(len(b)):
-                print(b[i])
+                if b[i] != None:
+                    print(b[i].value, end='  ')
+                else:
+                    print('-', end='')
                 a.append(b[i])
                 if b[i] != None:
                     continue_while = True
             b = []
+            print('')
             if continue_while == False:
                 break
-
-
-my_BST = BinarySearchTree()
-my_BST.add(TreeElement(5))
-my_BST.add(TreeElement(1))
-my_BST.add(TreeElement(3))
-my_BST.add(TreeElement(10)
-my_BST.add(TreeElement(7))
-my_BST.add(TreeElement(2))
-my_BST.print()

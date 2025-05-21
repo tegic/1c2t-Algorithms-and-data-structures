@@ -11,13 +11,22 @@ class List:
         self.first_el = None
 
     def print(self):
-        i = 0
+        i = 1
         current_el = self.first_el
         while current_el != None:
             print(f"Element {i}: {current_el.value}")
             current_el = current_el.next_el
             i += 1
 
-    def add(self, value):
-        new_el = ListElement(value, self.first_el)
-        self.first_el = new_el
+    def add_sorted(self, value):
+        if self.first_el == None:
+            self.first_el = ListElement(value, None)
+            return 0
+        if self.first_el.value > value:
+            second_el = self.first_el
+            self.first_el = ListElement(value, second_el)
+            return 0
+        current_el = self.first_el
+        while current_el.next_el != None and current_el.next_el.value < value:
+            current_el = current_el.next_el
+        current_el.next_el = ListElement(value, current_el.next_el)
