@@ -67,3 +67,69 @@ class BinarySearchTree():
             print('')
             if continue_while == False:
                 break
+    
+    def find(self, value):
+        previous_el = None
+        current_el = self.first_el
+        while current_el != None:
+            if current_el.value == value:
+                return previous_el, current_el
+            elif current_el.value < value:
+                previous_el = current_el
+                current_el = current_el.more
+            elif current_el.value > value:
+                previous_el = current_el
+                current_el = current_el.less
+        return False, False
+    
+    def find_min_el(self, start_el):
+        # there is 100% smaller and bigger element
+        previous_min_el = start_el
+        min_el = start_el.more
+        while min_el.less != None:
+            previous_min_el = min_el
+            min_el = min_el.less
+        return min_el, previous_min_el
+
+    def delete(self, value):
+        previous_el, current_el = self.find(value)
+        if previous_el == current_el == False:
+            return False
+        if current_el.less == None and current_el.more == None: # DONE
+            if previous_el.value > current_el.value:
+                previous_el.less = None
+            else:
+                previous_el.more = None
+        elif current_el.less == None:                           # DONE
+            if previous_el.value > current_el.value:
+                previous_el.less = current_el.more
+            else:
+                previous_el.more = current_el.more
+        elif current_el.more == None:                           # DONE
+            if previous_el.value > current_el.value:
+                previous_el.less = current_el.less
+            else:
+                previous_el.more = current_el.less
+        else:                                                   # DONE
+            min_el, previous_min_el = self.find_min_el(current_el)
+            previous_min_el.less = min_el.more
+            if previous_el.value > current_el.value:
+                previous_min_el.less = min_el.more
+                min_el.more = current_el.more
+                min_el.less = current_el.less
+                previous_el.less = min_el
+            else:
+                previous_el.more.value = min_el.value
+                previous_min_el.less = min_el.more
+        return True
+
+if __name__ == '__main__':
+    # For tests
+    my_BST = BinarySearchTree()
+    my_BST.add(TreeElement(5))
+    my_BST.add(TreeElement(1))
+    my_BST.add(TreeElement(3))
+    my_BST.add(TreeElement(10))
+    my_BST.add(TreeElement(7))
+    my_BST.add(TreeElement(2))
+    my_BST.print()
