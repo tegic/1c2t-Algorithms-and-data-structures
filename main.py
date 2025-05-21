@@ -13,6 +13,7 @@ for i in range(len(arrays[0])):
     #     my_BST.add(TreeElement(array[i]))
 
 print(f"HEIGHT {my_BST.find_height()} for {len(arrays[0])} elements")
+print(f"inorder {my_BST.get_inorder()}")
 # my_BST.print()
 
 # for i in range(len(array) - 1, 0, -1):

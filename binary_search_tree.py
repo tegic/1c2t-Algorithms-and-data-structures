@@ -130,6 +130,14 @@ class BinarySearchTree():
         if el == None:
             return -1
         return 1 + max(self.find_height_recursive(el.less), self.find_height_recursive(el.more))
+    
+    def get_inorder(self):
+        return self.get_inorder_recursive(self.first_el)
+    
+    def get_inorder_recursive(self, el):
+        if el == None:
+            return []
+        return self.get_inorder_recursive(el.less) + [el.value] + self.get_inorder_recursive(el.more)
 
 if __name__ == '__main__':
     # For tests
