@@ -1,0 +1,29 @@
+Przebieg ćwiczenia:
+
+I.
+l. W oparciu o losowy ciąg nie powtarzających się liczb naturalnych (zapamiętany przykładowo w tablicy) należy zbudować:
+
+- posortowaną listę jednokierunkową (sortowanie w trakcie wstawiania pojedynczego elementu),
+- drzewo poszukiwań binarnych (BST).
+
+2. Zmierzyć czas:
+- tworzenia obu struktur,
+- sumaryczny czas wyszukiwania wszystkich elementów jeden po drugim w oparciu o tablicę pomocniczą,
+- czas usuwania struktur przy usuwaniu zawsze pierwszego elementu listy i elementów drzewa w porządku wstecznym.
+
+Liczbę wczytywanych elementów należy dobrać w sposób umożliwiający pomiar czasu.
+Wyniki należy przedstawić na wspólnych wykresach dla poszczególnych operacji: tworzenia, wyszukiwania, usuwania.
+W razie konieczności należy zastosować skalę logarytmiczną.
+Dokonać porównania listy jednokierunkowej i drzewa poszukiwań binarnych.
+Sformułować wnioski dotyczące efektywności i wygody korzystania z obu struktur, złożoności obliczeniowej analizowanych operacji.
+Jakie są wady i zalety tych struktur?
+
+II.
+1. Utwórz drzewo BST i podaj jego wysokość, następnie skonstruuj wyważone drzewo AVL.
+tj. odczytaj elementy drzewa BST w porządku inorder i wykorzystaj metodę połowienia binarnego.
+Podaj wysokość utworzonego drzewa AVL. Porównanie wysokości obu drzew zobrazuj na wykresie w zależności od ilości elementów.
+
+2. Jakiemu celowi służy wyważanie drzewa i jakie są skutki wykonania tej operacji? Kiedy jej realizacja jest sensowna?
+
+III.
+Porównać wady i zalety struktur statycznych i abstrakcyjnych (złożonych).
