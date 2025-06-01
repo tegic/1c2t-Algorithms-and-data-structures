@@ -14,6 +14,6 @@ min_value = 0
 max_value = 10000
 round_numbers_count = 7
 arrays = []
-for i in range(200, 10001, 200):
+for i in range(100, 5001, 100):
     arrays.append(create_array_with_unique_values(i, min_value, max_value))
     print(f'created array with {i} elements')

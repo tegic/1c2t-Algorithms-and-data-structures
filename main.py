@@ -96,7 +96,7 @@ with pd.ExcelWriter('Result.xlsx', engine='xlsxwriter') as writer:
         'name':         'Add List',
         'categories':   f'=Sheet1!$A$2:$A${len(arrays) + 1}',
         'values':       f'=Sheet1!$B$2:$B${len(arrays) + 1}',
-        'line':         {'color': 'green'}
+        'line':         {'color': 'red'}
     })
     chart1.add_series({
         'name':         'Add BST',
@@ -105,20 +105,20 @@ with pd.ExcelWriter('Result.xlsx', engine='xlsxwriter') as writer:
         'line':         {'color': 'blue'}
     })
 
-    chart1.set_title({'name': 'Find in List vs Find in BST'})
+    chart1.set_title({'name': 'Adding elements to List vs Adding elements to BST'})
     chart1.set_x_axis({'name': 'Count'})
     chart1.set_y_axis({'name': 'Time (s)', 'log_base': 10})
     chart1.set_legend({'position': 'bottom'})
 
     chart2 = workbook.add_chart({'type': 'line'})
     chart2.add_series({
-        'name':         'Add List',
+        'name':         'Find elements in List',
         'categories':   f'=Sheet1!$A$2:$A${len(arrays) + 1}',
         'values':       f'=Sheet1!$D$2:$D${len(arrays) + 1}',
-        'line':         {'color': 'green'}
+        'line':         {'color': 'red'}
     })
     chart2.add_series({
-        'name':         'Add BST',
+        'name':         'Find elements in BST',
         'categories':   f'=Sheet1!$A$2:$A${len(arrays) + 1}',
         'values':       f'=Sheet1!$E$2:$E${len(arrays) + 1}',
         'line':         {'color': 'blue'}
@@ -131,13 +131,13 @@ with pd.ExcelWriter('Result.xlsx', engine='xlsxwriter') as writer:
 
     chart3 = workbook.add_chart({'type': 'line'})
     chart3.add_series({
-        'name':         'Add List',
+        'name':         'Delete in List',
         'categories':   f'=Sheet1!$A$2:$A${len(arrays) + 1}',
         'values':       f'=Sheet1!$F$2:$F${len(arrays) + 1}',
-        'line':         {'color': 'green'}
+        'line':         {'color': 'red'}
     })
     chart3.add_series({
-        'name':         'Add BST',
+        'name':         'Delete in BST',
         'categories':   f'=Sheet1!$A$2:$A${len(arrays) + 1}',
         'values':       f'=Sheet1!$G$2:$G${len(arrays) + 1}',
         'line':         {'color': 'blue'}
